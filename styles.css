@@ -1,0 +1,52 @@
+/* styles.css */
+.skills li{background:var(--glass);padding:0.5rem 0.8rem;border-radius:8px}
+
+
+.projects .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.project{position:relative;overflow:hidden;transform:translateY(0);transition:transform 300ms ease, box-shadow 300ms ease}
+.project:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+.project-tag{position:absolute;right:12px;top:12px;background:rgba(0,0,0,0.35);padding:0.2rem 0.5rem;border-radius:6px;font-size:0.8rem}
+.project-meta{display:flex;justify-content:space-between;align-items:center;margin-top:0.8rem}
+
+
+.certs .badges{display:flex;gap:1rem;flex-wrap:wrap}
+.badge{display:flex;gap:0.6rem;align-items:center;padding:0.6rem 0.8rem;border-radius:12px;text-decoration:none;background:rgba(255,255,255,0.02);color:inherit}
+.badge svg{width:28px;height:28px;opacity:0.9}
+
+
+.contact .social{display:flex;gap:1rem}
+.site-footer{padding:2rem 0 4rem;color:var(--muted);text-align:center}
+
+
+/* Responsive */
+@media (max-width:900px){
+.hero-inner{grid-template-columns:1fr}
+.projects .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:600px){
+.nav{display:none}
+.hamburger{display:block}
+.projects .grid{grid-template-columns:1fr}
+}
+
+
+/* small animations */
+@keyframes floaty{from{transform:translateY(0)}50%{transform:translateY(-6px)}to{transform:translateY(0)}}
+.card{animation:floaty 6s ease-in-out infinite}
+
+
+/* subtle link underline */
+a.link{border-bottom:1px dashed rgba(255,255,255,0.06);padding-bottom:2px}
+
+
+/* focus states for accessibility */
+a:focus, button:focus{outline:2px solid rgba(96,165,250,0.25);outline-offset:2px}
+
+
+/* small typing effect */
+.lead::after{content:"";display:inline-block;width:10px;height:18px;background:linear-gradient(90deg,var(--accent1),var(--accent2));margin-left:8px;border-radius:3px;vertical-align:middle;animation:blink 1s steps(2, start) infinite}
+@keyframes blink{50%{opacity:0}}
+
+
+/* footer small text */
+.site-footer small a{color:var(--muted);text-decoration:none}
